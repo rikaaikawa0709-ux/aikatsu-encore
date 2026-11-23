@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff3fa">
+  <title>アイカツアンコール カード手帳</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand-mark">✦</div>
+    <div><p class="eyebrow">MY COLLECTION</p><h1>アイカツアンコール</h1></div>
+    <span class="ribbon">♡</span>
+  </header>
+  <main>
+    <section id="loginPanel" class="panel login-panel">
+      <div class="sparkle">✧ ✦ ✧</div>
+      <h2>わたしのカード図鑑</h2>
+      <p>Googleログインして、カードの所持状況を保存しよう。</p>
+      <button id="loginBtn" class="primary">Googleでログイン</button>
+      <p id="authMessage" class="hint">ログインすると、別の端末でもデータを引き継げるよ。</p>
+    </section>
+
+    <section id="appPanel" hidden>
+      <section class="summary-grid">
+        <article class="summary"><span>登録カード</span><strong id="totalCount">0</strong></article>
+        <article class="summary"><span>所持カード</span><strong id="ownedCount">0</strong></article>
+        <article class="summary"><span>欲しいカード</span><strong id="wantedCount">0</strong></article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><h2>カードを探す</h2><span>✧</span></div>
+        <input id="searchInput" type="search" placeholder="カード名・シリーズで検索">
+        <div class="filters">
+          <select id="statusFilter" aria-label="所持状況">
+            <option value="all">すべて</option><option value="owned">所持</option><option value="notOwned">未所持</option><option value="exchange">交換予定</option><option value="wanted">欲しい</option>
+          </select>
+          <button id="addBtn" class="secondary">＋ カード追加</button>
+        </div>
+        <p class="hint">最初はカード一覧が空だよ。「カード追加」から登録してね。</p>
+      </section>
+
+      <section id="cardList" class="card-list"></section>
+      <div class="account-row"><span id="userLabel"></span><button id="logoutBtn" class="text-button">ログアウト</button></div>
+    </section>
+  </main>
+
+  <dialog id="cardDialog">
+    <form id="cardForm" method="dialog">
+      <div class="section-heading"><h2 id="dialogTitle">カードを追加</h2><button type="button" id="closeDialog" class="text-button">閉じる</button></div>
+      <input type="hidden" id="cardId">
+      <label>カード名<input id="cardName" required maxlength="100" placeholder="例：カード名"></label>
+      <label>シリーズ・弾<input id="cardSeries" maxlength="100" placeholder="例：第1弾"></label>
+      <label>メモ<input id="cardMemo" maxlength="300" placeholder="任意"></label>
+      <label class="check"><input id="isOwned" type="checkbox"> 所持している</label>
+      <label class="check"><input id="isExchange" type="checkbox"> 交換予定</label>
+      <label class="check"><input id="isWanted" type="checkbox"> 欲しいカード</label>
+      <label>所持枚数<input id="quantity" type="number" min="0" max="999" value="0"></label>
+      <div class="dialog-actions"><button type="button" id="deleteBtn" class="danger" hidden>削除</button><button type="submit" class="primary">保存する</button></div>
+      <p id="formMessage" class="hint"></p>
+    </form>
+  </dialog>
+  <footer>♡ MY AIKATSU CARD NOTE ♡</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
