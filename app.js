@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
 import { getFirestore, collection, doc, getDocs, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -25,7 +25,7 @@ const cardsRef = () => collection(db, "users", currentUser.uid, "cards");
 
 $("loginBtn").addEventListener("click", async () => {
   $("authMessage").textContent = "Googleログイン画面に移動します…";
-  try { await signInWithRedirect(auth, provider); }
+  try { await signInWithPopup(auth, provider); }
   catch (e) { $("authMessage").textContent = "ログインできませんでした: " + e.message; }
 });
 $("logoutBtn").addEventListener("click", () => signOut(auth));
@@ -36,7 +36,7 @@ $("statusFilter").addEventListener("change", renderCards);
 $("cardForm").addEventListener("submit", saveCard);
 $("deleteBtn").addEventListener("click", removeCard);
 
-getRedirectResult(auth).catch(e => $("authMessage").textContent = "ログイン結果を確認できませんでした: " + e.message);
+
 onAuthStateChanged(auth, async user => {
   currentUser = user;
   loginPanel.hidden = !!user;
