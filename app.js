@@ -53,10 +53,23 @@ onAuthStateChanged(auth, async user => {
 
 async function loadCards() {
   try {
-    // 初回のみ、図鑑マスターの不足分を追加。既存カード・画像・所持状況は上書きしない。
+    // 図鑑マスターの不足分を追加し、既存図鑑カードには未設定のブランドだけ補完する。
+    // 既存の画像・所持状況・メモ・数量・ユーザー設定済みブランドは上書きしない。
     const snap = await getDocs(cardsRef());
-    const existingIds = new Set(snap.docs.map(d => d.id));
+    const existingDocs = new Map(snap.docs.map(d => [d.id, d]));
+    const existingIds = new Set(existingDocs.keys());
     const missing = CARD_CATALOG.filter(c => !existingIds.has("catalog_" + c.cardNumber));
+    let brandUpdated = false;
+
+    for (const c of CARD_CATALOG) {
+      const id = "catalog_" + c.cardNumber;
+      const existing = existingDocs.get(id);
+      if (existing && c.brand && !String(existing.data().brand || "").trim()) {
+        await setDoc(doc(db, "users", currentUser.uid, "cards", id), { brand: c.brand }, { merge: true });
+        brandUpdated = true;
+      }
+    }
+
     for (const c of missing) {
       const id = "catalog_" + c.cardNumber;
       await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
@@ -64,7 +77,7 @@ async function loadCards() {
         exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
       });
     }
-    const latest = missing.length ? await getDocs(cardsRef()) : snap;
+    const latest = (missing.length || brandUpdated) ? await getDocs(cardsRef()) : snap;
     cards = latest.docs.map(d => ({ id: d.id, ...d.data() }));
     cards.sort((a,b) => String(a.cardNumber||"").localeCompare(String(b.cardNumber||""), "ja", {numeric:true}));
     renderCards();

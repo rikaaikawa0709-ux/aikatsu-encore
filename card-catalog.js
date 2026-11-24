@@ -4,49 +4,56 @@ export const CARD_CATALOG = [
     "name": "オーロラキスキャミソール",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-02_PR",
     "name": "オーロラキスドレープスカート",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-03_PR",
     "name": "オーロラキスバレエシューズ",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-04_PR",
     "name": "オーロラキスリボン",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-05_R",
     "name": "アイスブルーフリルキャミソール",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-06_R",
     "name": "アイスブルーフリルパニエ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-07_R",
     "name": "アイスブルーシューズ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-08_R",
@@ -60,84 +67,96 @@ export const CARD_CATALOG = [
     "name": "小花柄イエローワンピ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-10_R",
     "name": "ドリーミースタートップス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "E1-11_R",
     "name": "ドリーミースタースカート",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "E1-12_R",
     "name": "ドリーミースターパンプス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "E1-13_R",
     "name": "チャーミーリボントップス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-14_R",
     "name": "チャーミーリボンスカート",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-15_R",
     "name": "チャーミーリボンサンダル",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-16_R",
     "name": "チャーミーリボンアクセ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-17_R",
     "name": "クリアネスイエロートップス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-18_R",
     "name": "クリアネスイエロースカート",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-19_R",
     "name": "クリアネスイエローパンプス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-20_R",
     "name": "クリアネスイエローアクセ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-21_N",
@@ -207,14 +226,16 @@ export const CARD_CATALOG = [
     "name": "オデットスワン",
     "series": "1弾",
     "rarity": "ER",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "E1-31_ER",
     "name": "リルリボンストーリー",
     "series": "1弾",
     "rarity": "ER",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-32_ER",
@@ -228,56 +249,64 @@ export const CARD_CATALOG = [
     "name": "天の川コズミックワンショルダー",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-34_PR",
     "name": "天の川コズミックスカート",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-35_PR",
     "name": "天の川コズミックブーツ",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-36_PR",
     "name": "天の川コズミックカチューシャ",
     "series": "1弾",
     "rarity": "PR",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-37_R",
     "name": "プリズムサイバーグラフィックワンピ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-38_R",
     "name": "ブラックモダンボレロ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-39_R",
     "name": "ブラックフューチャーエナメルショートパンツ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-40_R",
     "name": "ブラックフューチャーブーツ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-41_N",
@@ -368,42 +397,48 @@ export const CARD_CATALOG = [
     "name": "アゲハレッドコクーンワンピ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-54_R",
     "name": "アゲハレッドミュール",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-55_R",
     "name": "パープルジュエリーワンピ",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-56_R",
     "name": "ゴールドチェーングラディエーター",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-57_R",
     "name": "アゲハロゴフリルトップス",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-58_R",
     "name": "アゲハファーつきスカート",
     "series": "1弾",
     "rarity": "R",
-    "catalogGroup": "通常カード"
+    "catalogGroup": "通常カード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "E1-59_R",
@@ -599,42 +634,48 @@ export const CARD_CATALOG = [
     "name": "オーロラキスキャミソール（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-02_PR_p1",
     "name": "オーロラキスドレープスカート（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-03_PR_p1",
     "name": "オーロラキスバレエシューズ（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-04_PR_p1",
     "name": "オーロラキスリボン（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "E1-30_ER_p1",
     "name": "オデットスワン（パラレル）",
     "series": "1弾",
     "rarity": "ER★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "E1-31_ER_p1",
     "name": "リルリボンストーリー（パラレル）",
     "series": "1弾",
     "rarity": "ER★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "Maple Ribbon"
   },
   {
     "cardNumber": "E1-32_ER_p1",
@@ -648,28 +689,32 @@ export const CARD_CATALOG = [
     "name": "天の川コズミックワンショルダー（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-34_PR_p1",
     "name": "天の川コズミックスカート（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-35_PR_p1",
     "name": "天の川コズミックブーツ（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-36_PR_p1",
     "name": "天の川コズミックカチューシャ（パラレル）",
     "series": "1弾",
     "rarity": "PR★",
-    "catalogGroup": "パラレルカード"
+    "catalogGroup": "パラレルカード",
+    "brand": "FUTURING GIRL"
   },
   {
     "cardNumber": "E1-50_ER_p1",
@@ -697,14 +742,16 @@ export const CARD_CATALOG = [
     "name": "エメラルドコクーンワンピ",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "EP-004_N",
     "name": "エメラルドアゲハミュール",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "SPICY AGEHA"
   },
   {
     "cardNumber": "EP-005_N",
@@ -725,21 +772,24 @@ export const CARD_CATALOG = [
     "name": "ピンクアーガイルカーデ",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-008_N",
     "name": "ピンクプリーツスカート",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-009_N",
     "name": "ガーリーローファー",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-010_N",
@@ -795,42 +845,48 @@ export const CARD_CATALOG = [
     "name": "ピンクの小花柄ワンピ",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-018_N",
     "name": "編み上げラベンダーブーツ",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-019_N",
     "name": "エンジェリーベアフリルトップス",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-020_N",
     "name": "エンジェリーベアパステルスカート",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-021_N",
     "name": "エンジェリーベアスニーカー",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-022_N",
     "name": "エンジェリーベアリボン",
     "series": "プロモーション",
     "rarity": "N",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-029_R",
@@ -851,42 +907,48 @@ export const CARD_CATALOG = [
     "name": "ガーリーデビルトップス",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-032_R",
     "name": "ガーリーデビルスカート",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-033_R",
     "name": "ガーリーデビルパンプス",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Angely Sugar"
   },
   {
     "cardNumber": "EP-034_R",
     "name": "モンスターキャットトップス",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "EP-035_R",
     "name": "モンスターキャットスカート",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "EP-036_R",
     "name": "モンスターキャットファーブーツ",
     "series": "プロモーション",
     "rarity": "R",
-    "catalogGroup": "プロモーションカード"
+    "catalogGroup": "プロモーションカード",
+    "brand": "Dreamy Crown"
   },
   {
     "cardNumber": "EP-037_N",
