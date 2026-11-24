@@ -1,0 +1,31 @@
+
+name: Daily Aikatsu card check
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+      timezone: "Asia/Tokyo"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check official card list
+        run: python scripts/check_cards.py
+      - name: Commit candidate list
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add new-card-candidates.json
+          git diff --cached --quiet || git commit -m "Update detected card candidates"
+          git push
