@@ -196,8 +196,8 @@ async function importSelectedCandidates() {
       if (existingNumbers.has(c.cardNumber)) continue;
       const id = "detected_" + c.cardNumber.replace(/[^A-Za-z0-9_-]/g, "_");
       await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
-        cardNumber: c.cardNumber, name: "名称未確認", brand: "", series: "", rarity: c.rarity || "",
-        catalog: false, catalogGroup: "新カード（情報確認待ち）", imageData: "", memo: "公式カードリストから自動検出。カード情報を確認して編集してね。",
+        cardNumber: c.cardNumber, name: c.name || "名称未確認", brand: "", series: c.series || "", rarity: c.rarity || "",
+        catalog: false, catalogGroup: c.catalogGroup || "新カード（情報確認待ち）", imageData: "", memo: "公式サイトから自動検出。カード名・ブランド・画像などを確認して編集してね。",
         owned: false, exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
       }, { merge: false });
       existingNumbers.add(c.cardNumber); added++;
