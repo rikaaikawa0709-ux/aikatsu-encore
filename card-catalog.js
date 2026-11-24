@@ -1,0 +1,912 @@
+export const CARD_CATALOG = [
+  {
+    "cardNumber": "E1-01_PR",
+    "name": "オーロラキスキャミソール",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-02_PR",
+    "name": "オーロラキスドレープスカート",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-03_PR",
+    "name": "オーロラキスバレエシューズ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-04_PR",
+    "name": "オーロラキスリボン",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-05_R",
+    "name": "アイスブルーフリルキャミソール",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-06_R",
+    "name": "アイスブルーフリルパニエ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-07_R",
+    "name": "アイスブルーシューズ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-08_R",
+    "name": "ジュエルつきパープルリボン",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-09_R",
+    "name": "小花柄イエローワンピ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-10_R",
+    "name": "ドリーミースタートップス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-11_R",
+    "name": "ドリーミースタースカート",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-12_R",
+    "name": "ドリーミースターパンプス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-13_R",
+    "name": "チャーミーリボントップス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-14_R",
+    "name": "チャーミーリボンスカート",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-15_R",
+    "name": "チャーミーリボンサンダル",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-16_R",
+    "name": "チャーミーリボンアクセ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-17_R",
+    "name": "クリアネスイエロートップス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-18_R",
+    "name": "クリアネスイエロースカート",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-19_R",
+    "name": "クリアネスイエローパンプス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-20_R",
+    "name": "クリアネスイエローアクセ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-21_N",
+    "name": "ピンクステージベスト",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-22_N",
+    "name": "ピンクステージスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-23_N",
+    "name": "ピンクステージシューズ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-24_N",
+    "name": "パフスリーブレモンカラーボレロ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-25_N",
+    "name": "ラベンダーフリルスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-26_N",
+    "name": "イエロー編み上げブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-27_N",
+    "name": "ピンクブロッサムトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-28_N",
+    "name": "ピンクブロッサムスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-29_N",
+    "name": "ピンクブロッサムブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-30_ER",
+    "name": "オデットスワン",
+    "series": "1弾",
+    "rarity": "ER",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-31_ER",
+    "name": "リルリボンストーリー",
+    "series": "1弾",
+    "rarity": "ER",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-32_ER",
+    "name": "オーロラペガサス",
+    "series": "1弾",
+    "rarity": "ER",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-33_PR",
+    "name": "天の川コズミックワンショルダー",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-34_PR",
+    "name": "天の川コズミックスカート",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-35_PR",
+    "name": "天の川コズミックブーツ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-36_PR",
+    "name": "天の川コズミックカチューシャ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-37_R",
+    "name": "プリズムサイバーグラフィックワンピ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-38_R",
+    "name": "ブラックモダンボレロ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-39_R",
+    "name": "ブラックフューチャーエナメルショートパンツ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-40_R",
+    "name": "ブラックフューチャーブーツ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-41_N",
+    "name": "ブルーステージブラウス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-42_N",
+    "name": "ブルーステージスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-43_N",
+    "name": "ブルーステージブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-44_N",
+    "name": "ブラックストライプジャケット",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-45_N",
+    "name": "ダイヤモンドチェックスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-46_N",
+    "name": "ブルーストラップシューズ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-47_N",
+    "name": "ネイビーブロッサムトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-48_N",
+    "name": "ネイビーブロッサムスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-49_N",
+    "name": "ネイビーブロッサムブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-50_ER",
+    "name": "ドリームエミネンス",
+    "series": "1弾",
+    "rarity": "ER",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-51_PR",
+    "name": "レジェンダリールージュドレス",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-52_PR",
+    "name": "レジェンダリールージュパンプス",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-53_R",
+    "name": "アゲハレッドコクーンワンピ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-54_R",
+    "name": "アゲハレッドミュール",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-55_R",
+    "name": "パープルジュエリーワンピ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-56_R",
+    "name": "ゴールドチェーングラディエーター",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-57_R",
+    "name": "アゲハロゴフリルトップス",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-58_R",
+    "name": "アゲハファーつきスカート",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-59_R",
+    "name": "ブラックシフォンカチューシャ",
+    "series": "1弾",
+    "rarity": "R",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-60_N",
+    "name": "パープルステージトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-61_N",
+    "name": "パープルステージスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-62_N",
+    "name": "パープルステージニーハイパンプス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-63_N",
+    "name": "プッチがらシャイニングトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-64_N",
+    "name": "ブラックウォッシュデニムミニ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-65_N",
+    "name": "セクシーロゴチューブトップ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-66_N",
+    "name": "ベルトつきレザースカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-67_N",
+    "name": "サイハイレザーブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-68_N",
+    "name": "パープルブロッサムトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-69_N",
+    "name": "パープルブロッサムスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-70_N",
+    "name": "パープルブロッサムブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-71_PR",
+    "name": "サンシャインスターウェイトップス",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-72_PR",
+    "name": "サンシャインスターウェイスカート",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-73_PR",
+    "name": "サンシャインスターウェイシューズ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-74_PR",
+    "name": "サンシャインスターウェイカチューシャ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-75_PR",
+    "name": "サンライズスターウェイトップス",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-76_PR",
+    "name": "サンライズスターウェイスカート",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-77_PR",
+    "name": "サンライズスターウェイシューズ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-78_PR",
+    "name": "サンライズスターウェイカチューシャ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-79_PR",
+    "name": "サンセットスターウェイトップス",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-80_PR",
+    "name": "サンセットスターウェイスカート",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-81_PR",
+    "name": "サンセットスターウェイシューズ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-82_PR",
+    "name": "サンセットスターウェイカチューシャ",
+    "series": "1弾",
+    "rarity": "PR",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-83_N",
+    "name": "イエローブロッサムトップス",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-84_N",
+    "name": "イエローブロッサムスカート",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-85_N",
+    "name": "イエローブロッサムブーツ",
+    "series": "1弾",
+    "rarity": "N",
+    "catalogGroup": "通常カード"
+  },
+  {
+    "cardNumber": "E1-01_PR_p1",
+    "name": "オーロラキスキャミソール（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-02_PR_p1",
+    "name": "オーロラキスドレープスカート（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-03_PR_p1",
+    "name": "オーロラキスバレエシューズ（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-04_PR_p1",
+    "name": "オーロラキスリボン（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-30_ER_p1",
+    "name": "オデットスワン（パラレル）",
+    "series": "1弾",
+    "rarity": "ER★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-31_ER_p1",
+    "name": "リルリボンストーリー（パラレル）",
+    "series": "1弾",
+    "rarity": "ER★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-32_ER_p1",
+    "name": "オーロラペガサス（パラレル）",
+    "series": "1弾",
+    "rarity": "ER★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-33_PR_p1",
+    "name": "天の川コズミックワンショルダー（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-34_PR_p1",
+    "name": "天の川コズミックスカート（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-35_PR_p1",
+    "name": "天の川コズミックブーツ（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-36_PR_p1",
+    "name": "天の川コズミックカチューシャ（パラレル）",
+    "series": "1弾",
+    "rarity": "PR★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "E1-50_ER_p1",
+    "name": "ドリームエミネンス（パラレル）",
+    "series": "1弾",
+    "rarity": "ER★",
+    "catalogGroup": "パラレルカード"
+  },
+  {
+    "cardNumber": "EP-001_N",
+    "name": "ピンクステージベスト＆スカート",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-002_PR",
+    "name": "レジェンダリールージュティアラ",
+    "series": "プロモーション",
+    "rarity": "PR",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-003_N",
+    "name": "エメラルドコクーンワンピ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-004_N",
+    "name": "エメラルドアゲハミュール",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-005_N",
+    "name": "ピンクシフォンカチューシャ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-006_N",
+    "name": "ピンクリボンつきフリルシャツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-007_N",
+    "name": "ピンクアーガイルカーデ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-008_N",
+    "name": "ピンクプリーツスカート",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-009_N",
+    "name": "ガーリーローファー",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-010_N",
+    "name": "ピンクリボンカチューシャ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-011_N",
+    "name": "スターライト学園ピンクジャージ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-012_N",
+    "name": "スターライト学園ブルージャージ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-013_N",
+    "name": "スターライト学園パープルジャージ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-014_N",
+    "name": "スターライト学園オレンジジャージ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-015_N",
+    "name": "スターライト学園スニーカー",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-016_N",
+    "name": "ブラックダイヤモンドジュエリーワンピ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-017_N",
+    "name": "ピンクの小花柄ワンピ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-018_N",
+    "name": "編み上げラベンダーブーツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-019_N",
+    "name": "エンジェリーベアフリルトップス",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-020_N",
+    "name": "エンジェリーベアパステルスカート",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-021_N",
+    "name": "エンジェリーベアスニーカー",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-022_N",
+    "name": "エンジェリーベアリボン",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-029_R",
+    "name": "スターライト学園制服",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-030_R",
+    "name": "スターライト学園ブーツ",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-031_R",
+    "name": "ガーリーデビルトップス",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-032_R",
+    "name": "ガーリーデビルスカート",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-033_R",
+    "name": "ガーリーデビルパンプス",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-034_R",
+    "name": "モンスターキャットトップス",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-035_R",
+    "name": "モンスターキャットスカート",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-036_R",
+    "name": "モンスターキャットファーブーツ",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-037_N",
+    "name": "エンブレムつきセーラーマリントップス＆スカート",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-038_N",
+    "name": "ブルーワークブーツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-042_PR",
+    "name": "たまごっちパラダイスカチューシャ",
+    "series": "プロモーション",
+    "rarity": "PR",
+    "catalogGroup": "プロモーションカード"
+  }
+];

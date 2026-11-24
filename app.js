@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
 import { getFirestore, collection, doc, getDocs, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+import { CARD_CATALOG } from "./card-catalog.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCKGiHJhqD3LSrK3Mbv5yQ0qFLaU--QJSk",
@@ -29,6 +30,7 @@ $("addBtn").addEventListener("click", () => openCard());
 $("closeDialog").addEventListener("click", () => $("cardDialog").close());
 $("searchInput").addEventListener("input", renderCards);
 $("statusFilter").addEventListener("change", renderCards);
+$("groupFilter").addEventListener("change", renderCards);
 $("cardForm").addEventListener("submit", saveCard);
 $("deleteBtn").addEventListener("click", removeCard);
 $("cardImage").addEventListener("change", handleImageSelect);
@@ -46,8 +48,20 @@ onAuthStateChanged(auth, async user => {
 
 async function loadCards() {
   try {
+    // 初回のみ、図鑑マスターの不足分を追加。既存カード・画像・所持状況は上書きしない。
     const snap = await getDocs(cardsRef());
-    cards = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    const existingIds = new Set(snap.docs.map(d => d.id));
+    const missing = CARD_CATALOG.filter(c => !existingIds.has("catalog_" + c.cardNumber));
+    for (const c of missing) {
+      const id = "catalog_" + c.cardNumber;
+      await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
+        ...c, catalog: true, imageData: "", memo: "", owned: false,
+        exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
+      });
+    }
+    const latest = missing.length ? await getDocs(cardsRef()) : snap;
+    cards = latest.docs.map(d => ({ id: d.id, ...d.data() }));
+    cards.sort((a,b) => String(a.cardNumber||"").localeCompare(String(b.cardNumber||""), "ja", {numeric:true}));
     renderCards();
   } catch (e) {
     $("cardList").innerHTML = `<p class="hint">カードを読み込めませんでした。Firestoreのルールを確認してね。(${escapeHtml(e.message)})</p>`;
@@ -55,10 +69,11 @@ async function loadCards() {
 }
 function renderCards() {
   if (!currentUser) return;
-  const q = $("searchInput").value.trim().toLowerCase(), f = $("statusFilter").value;
+  const q = $("searchInput").value.trim().toLowerCase(), f = $("statusFilter").value, group = $("groupFilter").value;
   const shown = cards.filter(c => {
-    const text = `${c.cardNumber||""} ${c.name||""} ${c.series||""} ${c.rarity||""} ${c.memo||""}`.toLowerCase();
+    const text = `${c.cardNumber||""} ${c.name||""} ${c.series||""} ${c.rarity||""} ${c.catalogGroup||""} ${c.memo||""}`.toLowerCase();
     if (q && !text.includes(q)) return false;
+    if (group !== "all" && (c.catalogGroup || "手動登録") !== group) return false;
     if (f === "owned" && !c.owned) return false;
     if (f === "notOwned" && c.owned) return false;
     if (f === "exchange" && !c.exchange) return false;
@@ -71,7 +86,7 @@ function renderCards() {
   $("cardList").innerHTML = shown.length ? shown.map(c => `
     <article class="card"><button class="card-image-button" type="button" data-image="${escapeHtml(c.id)}" aria-label="画像を拡大">
       ${c.imageData ? `<img class="card-image" src="${c.imageData}" alt="${escapeHtml(c.name||"カード画像")}">` : `<span class="image-placeholder"><span>✧</span><small>画像未登録</small></span>`}
-    </button><div class="card-info">${c.cardNumber ? `<p class="card-number">${escapeHtml(c.cardNumber)}</p>` : ""}<h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.series || "シリーズ未設定")}${c.rarity ? " · " + escapeHtml(c.rarity) : ""}</p>
+    </button><div class="card-info">${c.cardNumber ? `<p class="card-number">${escapeHtml(c.cardNumber)}</p>` : ""}<h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.series || "シリーズ未設定")}${c.rarity ? " · " + escapeHtml(c.rarity) : ""}</p><p class="catalog-group">${escapeHtml(c.catalogGroup || "手動登録")}</p>
     <div class="tags">${c.owned?'<span class="tag">所持</span>':'<span class="tag blue">未所持</span>'}${c.exchange?'<span class="tag lav">交換予定</span>':''}${c.wanted?'<span class="tag blue">欲しい</span>':''}</div><p>所持枚数：${Number(c.quantity)||0}枚</p><button class="edit-button" data-edit="${escapeHtml(c.id)}">編集</button></div></article>`).join("") : '<div class="panel empty-state"><p class="hint">カードがまだ登録されていないよ。「カード追加」から登録してね。</p></div>';
   $("cardList").querySelectorAll("[data-edit]").forEach(b => b.addEventListener("click", () => openCard(cards.find(c => c.id === b.dataset.edit))));
   $("cardList").querySelectorAll("[data-image]").forEach(b => b.addEventListener("click", () => {
@@ -122,7 +137,8 @@ function updateImagePreview() {
 async function saveCard(e) {
   e.preventDefault();
   const id = $("cardId").value || crypto.randomUUID();
-  const data = { cardNumber: $("cardNumber").value.trim(), name: $("cardName").value.trim(), series: $("cardSeries").value.trim(), rarity: $("cardRarity").value.trim(), imageData: currentImageData, memo: $("cardMemo").value.trim(), owned: $("isOwned").checked, exchange: $("isExchange").checked, wanted: $("isWanted").checked, quantity: Math.max(0, Math.min(999, Number($("quantity").value) || 0)), updatedAt: new Date().toISOString() };
+  const oldCard = cards.find(c => c.id === id);
+  const data = { catalog: !!oldCard?.catalog, catalogGroup: oldCard?.catalogGroup || "手動登録", cardNumber: $("cardNumber").value.trim(), name: $("cardName").value.trim(), series: $("cardSeries").value.trim(), rarity: $("cardRarity").value.trim(), imageData: currentImageData, memo: $("cardMemo").value.trim(), owned: $("isOwned").checked, exchange: $("isExchange").checked, wanted: $("isWanted").checked, quantity: Math.max(0, Math.min(999, Number($("quantity").value) || 0)), updatedAt: new Date().toISOString() };
   if (!data.name) { $("formMessage").textContent = "カード名を入力してね。"; return; }
   if (new Blob([JSON.stringify(data)]).size > 850000) { $("formMessage").textContent = "画像が大きすぎます。小さめの画像を選んでね。"; return; }
   try { $("formMessage").textContent = "保存しています…"; await setDoc(doc(db, "users", currentUser.uid, "cards", id), data); $("cardDialog").close(); await loadCards(); }
