@@ -31,6 +31,11 @@ $("closeDialog").addEventListener("click", () => $("cardDialog").close());
 $("searchInput").addEventListener("input", renderCards);
 $("statusFilter").addEventListener("change", renderCards);
 $("groupFilter").addEventListener("change", renderCards);
+$("brandFilter").addEventListener("change", renderCards);
+$("sortFilter").addEventListener("change", renderCards);
+$("exchangeQuickBtn").addEventListener("click", () => { $("statusFilter").value = "exchange"; renderCards(); });
+$("wantedQuickBtn").addEventListener("click", () => { $("statusFilter").value = "wanted"; renderCards(); });
+$("clearFiltersBtn").addEventListener("click", () => { $("searchInput").value = ""; $("groupFilter").value = "all"; $("statusFilter").value = "all"; $("brandFilter").value = "all"; $("sortFilter").value = "numberAsc"; renderCards(); });
 $("cardForm").addEventListener("submit", saveCard);
 $("deleteBtn").addEventListener("click", removeCard);
 $("cardImage").addEventListener("change", handleImageSelect);
@@ -69,25 +74,54 @@ async function loadCards() {
 }
 function renderCards() {
   if (!currentUser) return;
-  const q = $("searchInput").value.trim().toLowerCase(), f = $("statusFilter").value, group = $("groupFilter").value;
+  const q = $("searchInput").value.trim().toLowerCase();
+  const f = $("statusFilter").value;
+  const group = $("groupFilter").value;
+  const brand = $("brandFilter").value;
+  const sort = $("sortFilter").value;
+
+  // ブランドの選択肢は、カードに登録されたブランド名から自動作成する。
+  const selectedBrand = brand;
+  const brands = [...new Set(cards.map(c => String(c.brand || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "ja"));
+  $("brandFilter").innerHTML = '<option value="all">すべてのブランド</option>' + brands.map(b => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("");
+  if (brands.includes(selectedBrand)) $("brandFilter").value = selectedBrand;
+
   const shown = cards.filter(c => {
-    const text = `${c.cardNumber||""} ${c.name||""} ${c.series||""} ${c.rarity||""} ${c.catalogGroup||""} ${c.memo||""}`.toLowerCase();
+    const text = `${c.cardNumber||""} ${c.name||""} ${c.series||""} ${c.rarity||""} ${c.catalogGroup||""} ${c.brand||""} ${c.memo||""}`.toLowerCase();
     if (q && !text.includes(q)) return false;
     if (group !== "all" && (c.catalogGroup || "手動登録") !== group) return false;
+    if (brand !== "all" && (c.brand || "") !== brand) return false;
     if (f === "owned" && !c.owned) return false;
     if (f === "notOwned" && c.owned) return false;
     if (f === "exchange" && !c.exchange) return false;
     if (f === "wanted" && !c.wanted) return false;
+    if (f === "noImage" && c.imageData) return false;
     return true;
   });
-  $("totalCount").textContent = cards.length;
-  $("ownedCount").textContent = cards.filter(c => c.owned).length;
+  shown.sort((a,b) => {
+    if (sort === "numberDesc") return String(b.cardNumber||"").localeCompare(String(a.cardNumber||""), "ja", {numeric:true});
+    if (sort === "nameAsc") return String(a.name||"").localeCompare(String(b.name||""), "ja");
+    return String(a.cardNumber||"").localeCompare(String(b.cardNumber||""), "ja", {numeric:true});
+  });
+
+  const catalogCards = cards.filter(c => c.catalog);
+  const collectionBase = catalogCards.length ? catalogCards : cards;
+  const ownedBase = collectionBase.filter(c => c.owned).length;
+  const rate = collectionBase.length ? Math.round(ownedBase / collectionBase.length * 100) : 0;
+  $("totalCount").textContent = collectionBase.length;
+  $("ownedCount").textContent = ownedBase;
+  $("collectionRate").textContent = `${rate}%`;
+  $("collectionProgress").style.width = `${rate}%`;
+  $("collectionProgressText").textContent = `${ownedBase} / ${collectionBase.length} 枚を所持`;
   $("wantedCount").textContent = cards.filter(c => c.wanted).length;
+  $("exchangeQuickBtn").textContent = `♡ 交換リスト（${cards.filter(c => c.exchange).length}）`;
+  $("wantedQuickBtn").textContent = `☆ 欲しいカード（${cards.filter(c => c.wanted).length}）`;
+
   $("cardList").innerHTML = shown.length ? shown.map(c => `
     <article class="card"><button class="card-image-button" type="button" data-image="${escapeHtml(c.id)}" aria-label="画像を拡大">
       ${c.imageData ? `<img class="card-image" src="${c.imageData}" alt="${escapeHtml(c.name||"カード画像")}">` : `<span class="image-placeholder"><span>✧</span><small>画像未登録</small></span>`}
-    </button><div class="card-info">${c.cardNumber ? `<p class="card-number">${escapeHtml(c.cardNumber)}</p>` : ""}<h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.series || "シリーズ未設定")}${c.rarity ? " · " + escapeHtml(c.rarity) : ""}</p><p class="catalog-group">${escapeHtml(c.catalogGroup || "手動登録")}</p>
-    <div class="tags">${c.owned?'<span class="tag">所持</span>':'<span class="tag blue">未所持</span>'}${c.exchange?'<span class="tag lav">交換予定</span>':''}${c.wanted?'<span class="tag blue">欲しい</span>':''}</div><p>所持枚数：${Number(c.quantity)||0}枚</p><button class="edit-button" data-edit="${escapeHtml(c.id)}">編集</button></div></article>`).join("") : '<div class="panel empty-state"><p class="hint">カードがまだ登録されていないよ。「カード追加」から登録してね。</p></div>';
+    </button><div class="card-info">${c.cardNumber ? `<p class="card-number">${escapeHtml(c.cardNumber)}</p>` : ""}<h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.series || "シリーズ未設定")}${c.rarity ? " · " + escapeHtml(c.rarity) : ""}</p>${c.brand ? `<p class="brand-name">♡ ${escapeHtml(c.brand)}</p>` : ""}<p class="catalog-group">${escapeHtml(c.catalogGroup || "手動登録")}</p>
+    <div class="tags">${c.owned?'<span class="tag">所持</span>':'<span class="tag blue">未所持</span>'}${c.exchange?'<span class="tag lav">交換予定</span>':''}${c.wanted?'<span class="tag blue">欲しい</span>':''}${!c.imageData?'<span class="tag image-missing">画像未登録</span>':''}</div><p>所持枚数：${Number(c.quantity)||0}枚</p><button class="edit-button" data-edit="${escapeHtml(c.id)}">編集</button></div></article>`).join("") : '<div class="panel empty-state"><p class="hint">条件に合うカードがないよ。絞り込みを変えてみてね。</p></div>';
   $("cardList").querySelectorAll("[data-edit]").forEach(b => b.addEventListener("click", () => openCard(cards.find(c => c.id === b.dataset.edit))));
   $("cardList").querySelectorAll("[data-image]").forEach(b => b.addEventListener("click", () => {
     const c = cards.find(x => x.id === b.dataset.image); if (!c?.imageData) return;
@@ -98,7 +132,7 @@ function openCard(c = null) {
   $("cardForm").reset(); $("cardId").value = c?.id || "";
   $("dialogTitle").textContent = c ? "カードを編集" : "カードを追加";
   $("cardNumber").value = c?.cardNumber || ""; $("cardName").value = c?.name || "";
-  $("cardSeries").value = c?.series || ""; $("cardRarity").value = c?.rarity || ""; $("cardMemo").value = c?.memo || "";
+  $("cardSeries").value = c?.series || ""; $("cardRarity").value = c?.rarity || ""; $("cardBrand").value = c?.brand || ""; $("cardMemo").value = c?.memo || "";
   $("isOwned").checked = !!c?.owned; $("isExchange").checked = !!c?.exchange; $("isWanted").checked = !!c?.wanted;
   $("quantity").value = c?.quantity ?? 0; currentImageData = c?.imageData || ""; $("cardImage").value = "";
   updateImagePreview(); $("deleteBtn").hidden = !c; $("formMessage").textContent = ""; $("cardDialog").showModal();
@@ -138,7 +172,7 @@ async function saveCard(e) {
   e.preventDefault();
   const id = $("cardId").value || crypto.randomUUID();
   const oldCard = cards.find(c => c.id === id);
-  const data = { catalog: !!oldCard?.catalog, catalogGroup: oldCard?.catalogGroup || "手動登録", cardNumber: $("cardNumber").value.trim(), name: $("cardName").value.trim(), series: $("cardSeries").value.trim(), rarity: $("cardRarity").value.trim(), imageData: currentImageData, memo: $("cardMemo").value.trim(), owned: $("isOwned").checked, exchange: $("isExchange").checked, wanted: $("isWanted").checked, quantity: Math.max(0, Math.min(999, Number($("quantity").value) || 0)), updatedAt: new Date().toISOString() };
+  const data = { catalog: !!oldCard?.catalog, catalogGroup: oldCard?.catalogGroup || "手動登録", cardNumber: $("cardNumber").value.trim(), name: $("cardName").value.trim(), brand: $("cardBrand").value.trim(), series: $("cardSeries").value.trim(), rarity: $("cardRarity").value.trim(), imageData: currentImageData, memo: $("cardMemo").value.trim(), owned: $("isOwned").checked, exchange: $("isExchange").checked, wanted: $("isWanted").checked, quantity: Math.max(0, Math.min(999, Number($("quantity").value) || 0)), updatedAt: new Date().toISOString() };
   if (!data.name) { $("formMessage").textContent = "カード名を入力してね。"; return; }
   if (new Blob([JSON.stringify(data)]).size > 850000) { $("formMessage").textContent = "画像が大きすぎます。小さめの画像を選んでね。"; return; }
   try { $("formMessage").textContent = "保存しています…"; await setDoc(doc(db, "users", currentUser.uid, "cards", id), data); $("cardDialog").close(); await loadCards(); }

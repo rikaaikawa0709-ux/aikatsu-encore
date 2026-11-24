@@ -9,3 +9,15 @@ main{max-width:760px;margin:auto;padding:0 14px 24px}.panel{background:#ffffffd9
 
 .catalog-group{display:inline-block!important;background:#f8f1ff;border-radius:999px;padding:3px 7px;color:#987bb1!important;font-size:10px!important}
 .filters{flex-wrap:wrap}.filters select{min-width:0}
+
+/* 追加機能 */
+.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.collection-progress{background:#ffffffc9;border:1px solid #f1ddec;border-radius:16px;padding:11px 14px;margin:0 0 12px}
+.progress-track{height:9px;border-radius:999px;background:#f0eaf5;overflow:hidden}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#f4aecd,#b9b1f5,#a9d9f4);border-radius:999px;transition:width .25s ease}
+.collection-progress p{font-size:11px;color:var(--muted);text-align:right;margin:6px 0 0}
+.quick-filters{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.quick-button{border:1px solid #eadcf0;background:#fff8fc;color:#9b83b6;border-radius:999px;padding:8px 12px;font:inherit;font-size:11px;cursor:pointer}
+.brand-name{color:#a17db3!important;font-weight:700}
+.tag.image-missing{background:#fff4e8;color:#b18a65}
+@media(max-width:420px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters select{flex:1 1 calc(50% - 8px)}.filters button{flex:1 1 100%}}
