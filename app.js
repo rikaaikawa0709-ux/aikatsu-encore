@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
-let currentUser = null, cards = [], currentImageData = "";
+let currentUser = null, cards = [], currentImageData = "", detectedCandidates = [];
 const $ = id => document.getElementById(id);
 const cardsRef = () => collection(db, "users", currentUser.uid, "cards");
 
@@ -41,6 +41,7 @@ $("deleteBtn").addEventListener("click", removeCard);
 $("cardImage").addEventListener("change", handleImageSelect);
 $("removeImageBtn").addEventListener("click", () => { currentImageData = ""; $("cardImage").value = ""; updateImagePreview(); });
 $("closeImageDialog").addEventListener("click", () => $("imageDialog").close());
+$("importNewCardsBtn").addEventListener("click", importSelectedCandidates);
 
 onAuthStateChanged(auth, async user => {
   currentUser = user;
@@ -49,6 +50,7 @@ onAuthStateChanged(auth, async user => {
   if (!user) return;
   $("userLabel").textContent = user.displayName || user.email || "ログイン中";
   await loadCards();
+  await loadNewCardCandidates();
 });
 
 async function loadCards() {
@@ -152,6 +154,59 @@ async function changeQuantity(id, delta) {
     renderCards();
   } catch (e) {
     alert("所持数を保存できませんでした: " + e.message);
+  }
+}
+
+async function loadNewCardCandidates() {
+  try {
+    const response = await fetch(`./new-card-candidates.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error("候補ファイルがまだありません");
+    const data = await response.json();
+    const existingNumbers = new Set(cards.map(c => String(c.cardNumber || "").trim()).filter(Boolean));
+    detectedCandidates = (data.candidates || []).filter(c => c.cardNumber && !existingNumbers.has(c.cardNumber));
+    renderNewCardCandidates(data.checkedAt || "");
+  } catch (e) {
+    $("newCardsPanel").hidden = true;
+  }
+}
+function renderNewCardCandidates(checkedAt) {
+  const panel = $("newCardsPanel");
+  panel.hidden = detectedCandidates.length === 0;
+  $("newCardsCount").textContent = `${detectedCandidates.length}件`;
+  if (!detectedCandidates.length) return;
+  $("newCardsList").innerHTML = detectedCandidates.map((c, i) => `
+    <label class="new-card-row"><input type="checkbox" class="new-card-check" value="${i}" checked>
+      <span><strong>${escapeHtml(c.cardNumber)}</strong><small>${escapeHtml(c.rarity || "レアリティ未確認")} ・ ${escapeHtml(c.source || "公式カードリスト")}</small></span>
+    </label>`).join("");
+  $("importNewCardsBtn").disabled = false;
+  $("newCardsMessage").textContent = checkedAt ? `最終チェック：${checkedAt}（日本時間）` : "新カード候補が見つかったよ。";
+  $("newCardsList").querySelectorAll("input").forEach(input => input.addEventListener("change", updateImportButton));
+}
+function updateImportButton() {
+  $("importNewCardsBtn").disabled = !$("newCardsList").querySelector("input:checked");
+}
+async function importSelectedCandidates() {
+  const selected = [...$("newCardsList").querySelectorAll("input:checked")].map(x => detectedCandidates[Number(x.value)]).filter(Boolean);
+  if (!selected.length) return;
+  if (!confirm(`${selected.length}枚を確認待ちカードとして追加する？\nカード名・ブランドなどは、公式ページで確認できない場合は後から編集してね。`)) return;
+  const existingNumbers = new Set(cards.map(c => String(c.cardNumber || "").trim()));
+  let added = 0;
+  try {
+    for (const c of selected) {
+      if (existingNumbers.has(c.cardNumber)) continue;
+      const id = "detected_" + c.cardNumber.replace(/[^A-Za-z0-9_-]/g, "_");
+      await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
+        cardNumber: c.cardNumber, name: "名称未確認", brand: "", series: "", rarity: c.rarity || "",
+        catalog: false, catalogGroup: "新カード（情報確認待ち）", imageData: "", memo: "公式カードリストから自動検出。カード情報を確認して編集してね。",
+        owned: false, exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
+      }, { merge: false });
+      existingNumbers.add(c.cardNumber); added++;
+    }
+    $("newCardsMessage").textContent = `${added}枚を追加したよ。カード名などを編集してね。`;
+    await loadCards();
+    await loadNewCardCandidates();
+  } catch (e) {
+    $("newCardsMessage").textContent = "追加できませんでした: " + e.message;
   }
 }
 

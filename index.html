@@ -22,6 +22,13 @@
         <button id="addBtn" class="secondary">＋ カード追加</button>
       </div>
       <div class="quick-filters"><button type="button" id="exchangeQuickBtn" class="quick-button">♡ 交換リスト</button><button type="button" id="wantedQuickBtn" class="quick-button">☆ 欲しいカード</button><button type="button" id="clearFiltersBtn" class="quick-button">すべて表示</button></div><p class="hint">ブランドはカード編集から登録すると、ブランド別に絞り込めるよ。画像未登録カードも一覧で確認できるよ。</p></section>
+      <section id="newCardsPanel" class="panel" hidden>
+        <div class="section-heading"><h2>✧ 新カード候補</h2><span id="newCardsCount">0件</span></div>
+        <p class="hint">公式カードリストから見つかった未登録のカード番号だよ。名前やブランドが画像だけの場合は、追加後に編集してね。</p>
+        <div id="newCardsList" class="new-cards-list"></div>
+        <button type="button" id="importNewCardsBtn" class="primary" disabled>選択したカードをまとめて追加</button>
+        <p id="newCardsMessage" class="hint"></p>
+      </section>
       <section id="cardList" class="card-list"></section><div class="account-row"><span id="userLabel"></span><button id="logoutBtn" class="text-button">ログアウト</button></div>
     </section>
   </main>

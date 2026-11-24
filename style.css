@@ -41,3 +41,5 @@ main{max-width:760px;margin:auto;padding:0 14px 24px}.panel{background:#ffffffd9
 .quantity-button{border:0;border-radius:50%;width:20px;height:20px;padding:0;background:#f4efff;color:#927bb5;font-size:15px;line-height:1;cursor:pointer;touch-action:manipulation}
 .quantity-button:active{transform:scale(.92);background:#eadfff}
 @media(min-width:600px){.card-list{grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.card-info{padding:8px}.card h3{font-size:11px}.card p{font-size:9px}.card .card-number{font-size:9px}.tag{font-size:8px;padding:3px 5px}.quantity-control{font-size:9px}.quantity-control strong{font-size:11px}.quantity-button{width:24px;height:24px}.edit-button{font-size:10px}}
+
+.new-cards-list{display:grid;gap:7px;margin:10px 0}.new-card-row{display:flex;align-items:center;gap:9px;background:#fff8fc;border:1px solid #f0ddeb;border-radius:12px;padding:9px;font-size:11px}.new-card-row input{accent-color:#d99fc5}.new-card-row span{display:flex;flex-direction:column;gap:3px}.new-card-row small{font-size:9px;color:var(--muted)}#importNewCardsBtn{width:100%;margin-top:6px}
