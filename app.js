@@ -134,13 +134,27 @@ function renderCards() {
     <article class="card"><button class="card-image-button" type="button" data-image="${escapeHtml(c.id)}" aria-label="画像を拡大">
       ${c.imageData ? `<img class="card-image" src="${c.imageData}" alt="${escapeHtml(c.name||"カード画像")}">` : `<span class="image-placeholder"><span>✧</span><small>画像未登録</small></span>`}
     </button><div class="card-info">${c.cardNumber ? `<p class="card-number">${escapeHtml(c.cardNumber)}</p>` : ""}<h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.series || "シリーズ未設定")}${c.rarity ? " · " + escapeHtml(c.rarity) : ""}</p>${c.brand ? `<p class="brand-name">♡ ${escapeHtml(c.brand)}</p>` : ""}<p class="catalog-group">${escapeHtml(c.catalogGroup || "手動登録")}</p>
-    <div class="tags">${c.owned?'<span class="tag">所持</span>':'<span class="tag blue">未所持</span>'}${c.exchange?'<span class="tag lav">交換予定</span>':''}${c.wanted?'<span class="tag blue">欲しい</span>':''}${!c.imageData?'<span class="tag image-missing">画像未登録</span>':''}</div><p>所持枚数：${Number(c.quantity)||0}枚</p><button class="edit-button" data-edit="${escapeHtml(c.id)}">編集</button></div></article>`).join("") : '<div class="panel empty-state"><p class="hint">条件に合うカードがないよ。絞り込みを変えてみてね。</p></div>';
+    <div class="tags">${c.owned?'<span class="tag">所持</span>':'<span class="tag blue">未所持</span>'}${c.exchange?'<span class="tag lav">交換予定</span>':''}${c.wanted?'<span class="tag blue">欲しい</span>':''}${!c.imageData?'<span class="tag image-missing">画像未登録</span>':''}</div><div class="quantity-control"><span>所持数</span><button type="button" class="quantity-button" data-quantity="-1" data-id="${escapeHtml(c.id)}" aria-label="1枚減らす">−</button><strong>${Number(c.quantity)||0}</strong><button type="button" class="quantity-button" data-quantity="1" data-id="${escapeHtml(c.id)}" aria-label="1枚増やす">＋</button></div><button class="edit-button" data-edit="${escapeHtml(c.id)}">編集</button></div></article>`).join("") : '<div class="panel empty-state"><p class="hint">条件に合うカードがないよ。絞り込みを変えてみてね。</p></div>';
+  $("cardList").querySelectorAll("[data-quantity]").forEach(b => b.addEventListener("click", () => changeQuantity(b.dataset.id, Number(b.dataset.quantity))));
   $("cardList").querySelectorAll("[data-edit]").forEach(b => b.addEventListener("click", () => openCard(cards.find(c => c.id === b.dataset.edit))));
   $("cardList").querySelectorAll("[data-image]").forEach(b => b.addEventListener("click", () => {
     const c = cards.find(x => x.id === b.dataset.image); if (!c?.imageData) return;
     $("largeCardImage").src = c.imageData; $("imageDialog").showModal();
   }));
 }
+async function changeQuantity(id, delta) {
+  const card = cards.find(c => c.id === id);
+  if (!card) return;
+  const quantity = Math.max(0, Math.min(999, (Number(card.quantity) || 0) + delta));
+  try {
+    await setDoc(doc(db, "users", currentUser.uid, "cards", id), { quantity, owned: quantity > 0, updatedAt: new Date().toISOString() }, { merge: true });
+    card.quantity = quantity; card.owned = quantity > 0;
+    renderCards();
+  } catch (e) {
+    alert("所持数を保存できませんでした: " + e.message);
+  }
+}
+
 function openCard(c = null) {
   $("cardForm").reset(); $("cardId").value = c?.id || "";
   $("dialogTitle").textContent = c ? "カードを編集" : "カードを追加";
