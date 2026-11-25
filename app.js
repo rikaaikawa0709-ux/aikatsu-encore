@@ -92,33 +92,50 @@ async function loadCards() {
 // 公式情報は「未確認・空欄」の項目だけ補完する。手入力済み情報や所持データは変更しない。
 async function syncOfficialMetadata() {
   try {
-    const response = await fetch(`./card-metadata.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) return;
-    const data = await response.json();
-    const metadataByNumber = new Map((data.cards || []).map(item => [String(item.cardNumber || "").trim(), item]));
-    const catalogByNumber = new Map(CARD_CATALOG.map(item => [String(item.cardNumber || "").trim(), item]));
+    // card-catalog.js の情報も使い、既存の「名称未確認」カードを補完する。
+    const byNumber = new Map(
+      CARD_CATALOG.map(item => [String(item.cardNumber || "").trim(), item])
+    );
+
+    // 自動検出した公式メタデータがあれば、カタログ情報に追加する。
+    try {
+      const response = await fetch(`./card-metadata.json?v=${Date.now()}`, { cache: "no-store" });
+      if (response.ok) {
+        const data = await response.json();
+        for (const item of (data.cards || [])) {
+          const number = String(item.cardNumber || "").trim();
+          if (!number) continue;
+          byNumber.set(number, { ...(byNumber.get(number) || {}), ...item });
+        }
+      }
+    } catch (metadataError) {
+      console.warn("公式メタデータJSONを読み込めませんでした。図鑑情報で同期します:", metadataError);
+    }
+
     for (const card of cards) {
-      const number = String(card.cardNumber || "").trim();
-      const official = metadataByNumber.get(number) || {};
-      const catalog = catalogByNumber.get(number) || {};
-      // 元からあるカード図鑑の情報も同期元として使う。
-      // 手入力済みの項目は残し、空欄や「名称未確認」だけ補完する。
+      const official = byNumber.get(String(card.cardNumber || "").trim());
+      if (!official) continue;
       const patch = {};
       const currentName = String(card.name || "").trim();
-      const incomingName = String(official.name || catalog.name || "").trim();
-      if (incomingName && (!currentName || currentName === "名称未確認")) patch.name = incomingName;
+      const officialName = String(official.name || "").trim();
+      if (officialName && (!currentName || currentName === "名称未確認")) patch.name = officialName;
+
       const currentBrand = String(card.brand || "").trim();
-      const incomingBrand = String(official.brand || catalog.brand || "").trim();
-      if (!currentBrand && incomingBrand) patch.brand = incomingBrand;
+      const officialBrand = String(official.brand || "").trim();
+      if (!currentBrand && officialBrand) patch.brand = officialBrand;
+
       for (const field of ["series", "rarity", "catalogGroup"]) {
         const current = String(card[field] || "").trim();
-        const incoming = String(official[field] || catalog[field] || "").trim();
+        const incoming = String(official[field] || "").trim();
         if (!current && incoming) patch[field] = incoming;
       }
+
       if (Object.keys(patch).length) {
         await setDoc(doc(db, "users", currentUser.uid, "cards", card.id), patch, { merge: true });
+        Object.assign(card, patch);
       }
     }
+    renderCards();
   } catch (e) {
     console.warn("公式カード情報の同期をスキップしました:", e);
   }
@@ -231,11 +248,10 @@ async function importSelectedCandidates() {
   try {
     for (const c of selected) {
       if (existingNumbers.has(c.cardNumber)) continue;
-      const master = CARD_CATALOG.find(item => item.cardNumber === c.cardNumber) || {};
       const id = "detected_" + c.cardNumber.replace(/[^A-Za-z0-9_-]/g, "_");
       await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
-        cardNumber: c.cardNumber, name: c.name || master.name || "名称未確認", brand: c.brand || master.brand || "", series: c.series || master.series || "", rarity: c.rarity || master.rarity || "",
-        catalog: false, catalogGroup: c.catalogGroup || master.catalogGroup || "新カード（情報確認待ち）", imageData: "", memo: "公式サイトから自動検出。カード名・ブランド・画像などを確認して編集してね。",
+        cardNumber: c.cardNumber, name: c.name || "名称未確認", brand: c.brand || "", series: c.series || "", rarity: c.rarity || "",
+        catalog: false, catalogGroup: c.catalogGroup || "新カード（情報確認待ち）", imageData: "", memo: "公式サイトから自動検出。カード名・ブランド・画像などを確認して編集してね。",
         owned: false, exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
       }, { merge: false });
       existingNumbers.add(c.cardNumber); added++;
