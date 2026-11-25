@@ -1,5 +1,61 @@
 export const CARD_CATALOG = [
   {
+    "cardNumber": "EP-023_N",
+    "name": "ミントシフォントップス",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-024_N",
+    "name": "花柄ショートパンツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-025_N",
+    "name": "折り返しピンクショートブーツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-026_N",
+    "name": "レインボープリントシャツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-027_N",
+    "name": "ブラックスキニーパンツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-028_N",
+    "name": "ブルーニーハイブーツ",
+    "series": "プロモーション",
+    "rarity": "N",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-039_R",
+    "name": "ホワイトサンタパーカー＆スカート",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
+    "cardNumber": "EP-040_R",
+    "name": "ホワイトサンタショートブーツ",
+    "series": "プロモーション",
+    "rarity": "R",
+    "catalogGroup": "プロモーションカード"
+  },
+  {
     "cardNumber": "E1-01_PR",
     "name": "オーロラキスキャミソール",
     "series": "1弾",
