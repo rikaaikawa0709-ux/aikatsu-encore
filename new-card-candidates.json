@@ -1,63 +1,6 @@
 {
-  "checkedAt": "2026-11-25 20:16",
+  "checkedAt": "2026-11-25 20:42",
   "source": "https://dcd.aikatsu.com/encore/news/",
-  "candidates": [
-    {
-      "cardNumber": "EP-023_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式ニュース"
-    },
-    {
-      "cardNumber": "EP-024_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-025_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-026_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-027_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-028_N",
-      "rarity": "N",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-039_R",
-      "rarity": "R",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    },
-    {
-      "cardNumber": "EP-040_R",
-      "rarity": "R",
-      "series": "プロモーション",
-      "catalogGroup": "プロモーションカード",
-      "source": "公式プロモーションカードリスト"
-    }
-  ],
+  "candidates": [],
   "checkWarnings": []
 }

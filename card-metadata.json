@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25 20:16",
+  "checkedAt": "2026-11-25 20:42",
   "cards": [
     {
       "cardNumber": "E1-01_PR",
@@ -999,43 +999,49 @@
     },
     {
       "cardNumber": "EP-023_N",
-      "rarity": "N",
+      "name": "ミントシフォントップス",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式ニュース"
     },
     {
       "cardNumber": "EP-024_N",
-      "rarity": "N",
+      "name": "花柄ショートパンツ",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
     {
       "cardNumber": "EP-025_N",
-      "rarity": "N",
+      "name": "折り返しピンクショートブーツ",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
     {
       "cardNumber": "EP-026_N",
-      "rarity": "N",
+      "name": "レインボープリントシャツ",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
     {
       "cardNumber": "EP-027_N",
-      "rarity": "N",
+      "name": "ブラックスキニーパンツ",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
     {
       "cardNumber": "EP-028_N",
-      "rarity": "N",
+      "name": "ブルーニーハイブーツ",
       "series": "プロモーション",
+      "rarity": "N",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
@@ -1127,15 +1133,17 @@
     },
     {
       "cardNumber": "EP-039_R",
-      "rarity": "R",
+      "name": "ホワイトサンタパーカー＆スカート",
       "series": "プロモーション",
+      "rarity": "R",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
     {
       "cardNumber": "EP-040_R",
-      "rarity": "R",
+      "name": "ホワイトサンタショートブーツ",
       "series": "プロモーション",
+      "rarity": "R",
       "catalogGroup": "プロモーションカード",
       "source": "公式プロモーションカードリスト"
     },
