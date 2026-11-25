@@ -50,6 +50,8 @@ onAuthStateChanged(auth, async user => {
   if (!user) return;
   $("userLabel").textContent = user.displayName || user.email || "ログイン中";
   await loadCards();
+  await syncOfficialMetadata();
+  await loadCards();
   await loadNewCardCandidates();
 });
 
@@ -87,6 +89,37 @@ async function loadCards() {
     $("cardList").innerHTML = `<p class="hint">カードを読み込めませんでした。Firestoreのルールを確認してね。(${escapeHtml(e.message)})</p>`;
   }
 }
+// 公式情報は「未確認・空欄」の項目だけ補完する。手入力済み情報や所持データは変更しない。
+async function syncOfficialMetadata() {
+  try {
+    const response = await fetch(`./card-metadata.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    const byNumber = new Map((data.cards || []).map(item => [String(item.cardNumber || "").trim(), item]));
+    for (const card of cards) {
+      const official = byNumber.get(String(card.cardNumber || "").trim());
+      if (!official) continue;
+      const patch = {};
+      const currentName = String(card.name || "").trim();
+      const officialName = String(official.name || "").trim();
+      if (officialName && (!currentName || currentName === "名称未確認")) patch.name = officialName;
+      const currentBrand = String(card.brand || "").trim();
+      const officialBrand = String(official.brand || "").trim();
+      if (!currentBrand && officialBrand) patch.brand = officialBrand;
+      for (const field of ["series", "rarity", "catalogGroup"]) {
+        const current = String(card[field] || "").trim();
+        const incoming = String(official[field] || "").trim();
+        if (!current && incoming) patch[field] = incoming;
+      }
+      if (Object.keys(patch).length) {
+        await setDoc(doc(db, "users", currentUser.uid, "cards", card.id), patch, { merge: true });
+      }
+    }
+  } catch (e) {
+    console.warn("公式カード情報の同期をスキップしました:", e);
+  }
+}
+
 function renderCards() {
   if (!currentUser) return;
   const q = $("searchInput").value.trim().toLowerCase();
@@ -196,7 +229,7 @@ async function importSelectedCandidates() {
       if (existingNumbers.has(c.cardNumber)) continue;
       const id = "detected_" + c.cardNumber.replace(/[^A-Za-z0-9_-]/g, "_");
       await setDoc(doc(db, "users", currentUser.uid, "cards", id), {
-        cardNumber: c.cardNumber, name: c.name || "名称未確認", brand: "", series: c.series || "", rarity: c.rarity || "",
+        cardNumber: c.cardNumber, name: c.name || "名称未確認", brand: c.brand || "", series: c.series || "", rarity: c.rarity || "",
         catalog: false, catalogGroup: c.catalogGroup || "新カード（情報確認待ち）", imageData: "", memo: "公式サイトから自動検出。カード名・ブランド・画像などを確認して編集してね。",
         owned: false, exchange: false, wanted: false, quantity: 0, updatedAt: new Date().toISOString()
       }, { merge: false });
