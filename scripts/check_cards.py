@@ -161,10 +161,24 @@ def main():
     }
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    # 既存カードも含め、公式ページで見つかった情報をアプリへ渡す。
+    # 元のカード図鑑（card-catalog.js）の名前・ブランド等を読み込み、
+    # 自動検出データと統合してアプリへ渡す。
+    catalog_source = CATALOG.read_text(encoding="utf-8")
+    catalog_json = catalog_source.split("=", 1)[1].strip().rstrip(";").strip()
+    catalog_items = json.loads(catalog_json)
+    catalog_by_number = {item["cardNumber"]: item for item in catalog_items}
+    metadata_cards = []
+    for number, item in found.items():
+        merged = dict(catalog_by_number.get(number, {}))
+        merged.update({key: value for key, value in item.items() if value not in (None, "")})
+        merged["cardNumber"] = number
+        metadata_cards.append(merged)
+    for number, item in catalog_by_number.items():
+        if number not in found:
+            metadata_cards.append(dict(item))
     metadata_result = {
         "checkedAt": checked_at,
-        "cards": sorted(found.values(), key=lambda x: x["cardNumber"]),
+        "cards": sorted(metadata_cards, key=lambda x: x["cardNumber"]),
     }
     METADATA_OUTPUT.write_text(json.dumps(metadata_result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"検出候補: {len(result['candidates'])}件 / メタデータ対象: {len(metadata_result['cards'])}件 / 取得・検出警告: {len(errors)}件")
