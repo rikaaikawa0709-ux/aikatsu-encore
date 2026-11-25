@@ -1,0 +1,896 @@
+{
+  "checkedAt": "2026-11-25 20:05",
+  "cards": [
+    {
+      "cardNumber": "E1-01_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-02_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-03_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-04_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-05_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-06_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-07_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-08_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-09_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-10_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-11_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-12_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-13_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-14_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-15_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-16_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-17_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-18_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-19_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-20_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-21_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-22_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-23_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-24_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-25_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-26_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-27_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-28_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-29_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-30_ER",
+      "rarity": "ER",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-31_ER",
+      "rarity": "ER",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-32_ER",
+      "rarity": "ER",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-33_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-34_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-35_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-36_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-37_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-38_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-39_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-40_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-41_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-42_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-43_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-44_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-45_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-46_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-47_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-48_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-49_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-50_ER",
+      "rarity": "ER",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-51_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式ニュース",
+      "name": "レジェンダリールージュドレス"
+    },
+    {
+      "cardNumber": "E1-52_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式ニュース",
+      "name": "レジェンダリールージュパンプス"
+    },
+    {
+      "cardNumber": "E1-53_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-54_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-55_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-56_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-57_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-58_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-59_R",
+      "rarity": "R",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-60_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-61_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-62_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-63_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-64_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-65_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-66_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-67_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-68_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-69_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-70_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-71_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-72_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-73_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-74_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-75_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-76_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-77_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-78_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-79_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-80_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-81_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-82_PR",
+      "rarity": "PR",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-83_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-84_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "E1-85_N",
+      "rarity": "N",
+      "series": "",
+      "catalogGroup": "新カード（分類確認待ち）",
+      "source": "公式カードリスト"
+    },
+    {
+      "cardNumber": "EP-001_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "ピンクステージベスト"
+    },
+    {
+      "cardNumber": "EP-002_PR",
+      "rarity": "PR",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "レジェンダリールージュティアラ"
+    },
+    {
+      "cardNumber": "EP-003_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-004_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-005_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-006_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-007_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-008_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-009_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-010_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-011_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-012_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-013_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-014_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-015_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-016_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-017_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-018_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-019_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-020_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-021_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-022_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース"
+    },
+    {
+      "cardNumber": "EP-023_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース"
+    },
+    {
+      "cardNumber": "EP-024_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-025_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-026_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-027_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-028_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-029_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "スターライト学園制服"
+    },
+    {
+      "cardNumber": "EP-030_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "スターライト学園ブーツ"
+    },
+    {
+      "cardNumber": "EP-031_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-032_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-033_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-034_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-035_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-036_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-037_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "エンブレムつきセーラーマリントップス"
+    },
+    {
+      "cardNumber": "EP-038_N",
+      "rarity": "N",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "ブルーワークブーツ"
+    },
+    {
+      "cardNumber": "EP-039_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-040_R",
+      "rarity": "R",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式プロモーションカードリスト"
+    },
+    {
+      "cardNumber": "EP-042_PR",
+      "rarity": "PR",
+      "series": "プロモーション",
+      "catalogGroup": "プロモーションカード",
+      "source": "公式ニュース",
+      "name": "たまごっちパラダイスカチューシャ"
+    }
+  ]
+}
