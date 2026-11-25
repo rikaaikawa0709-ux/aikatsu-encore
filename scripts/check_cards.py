@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "card-catalog.js"
 OUTPUT = ROOT / "new-card-candidates.json"
+METADATA_OUTPUT = ROOT / "card-metadata.json"
 
 # 629001: 1弾、629002: パラレル、629901: プロモーションカード
 CARD_LIST_URLS = [
@@ -144,16 +145,29 @@ def main():
         for item in previous.get("candidates", []):
             number = item.get("cardNumber")
             if number and number not in known:
-                candidates.setdefault(number, item)
+                if number in candidates:
+                    for key, value in item.items():
+                        if not candidates[number].get(key) and value:
+                            candidates[number][key] = value
+                else:
+                    candidates[number] = item
 
+    checked_at = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M")
     result = {
-        "checkedAt": datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M"),
+        "checkedAt": checked_at,
         "source": NEWS_INDEX_URL,
         "candidates": sorted(candidates.values(), key=lambda x: x["cardNumber"]),
         "checkWarnings": errors,
     }
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"検出候補: {len(result['candidates'])}件 / 取得・検出警告: {len(errors)}件")
+
+    # 既存カードも含め、公式ページで見つかった情報をアプリへ渡す。
+    metadata_result = {
+        "checkedAt": checked_at,
+        "cards": sorted(found.values(), key=lambda x: x["cardNumber"]),
+    }
+    METADATA_OUTPUT.write_text(json.dumps(metadata_result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"検出候補: {len(result['candidates'])}件 / メタデータ対象: {len(metadata_result['cards'])}件 / 取得・検出警告: {len(errors)}件")
     if errors:
         print("警告: 一部の公式ページを確認できていません。")
 
