@@ -1,4 +1,3 @@
-
 name: Daily Aikatsu card check
 
 on:
@@ -16,16 +15,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
       - name: Check official card list
         run: python scripts/check_cards.py
-      - name: Commit candidate list
+
+      - name: Commit candidate and metadata files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add new-card-candidates.json
-          git diff --cached --quiet || git commit -m "Update detected card candidates"
+          git add new-card-candidates.json card-metadata.json
+          git diff --cached --quiet || git commit -m "Update detected card metadata"
           git push
