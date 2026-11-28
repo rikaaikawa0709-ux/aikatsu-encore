@@ -55,6 +55,25 @@ $("wantedQuickBtn").addEventListener("click", () => {
   renderCards();
 });
 
+// 譲れるカードの絞り込み項目を追加
+const tradeableOption = document.createElement("option");
+tradeableOption.value = "tradeable";
+tradeableOption.textContent = "譲れるカード";
+$("statusFilter").appendChild(tradeableOption);
+
+// 譲れるカードの専用ボタンを追加
+const tradeableQuickBtn = document.createElement("button");
+tradeableQuickBtn.type = "button";
+tradeableQuickBtn.id = "tradeableQuickBtn";
+tradeableQuickBtn.className = $("wantedQuickBtn").className;
+tradeableQuickBtn.textContent = "♡ 譲れるカード";
+$("wantedQuickBtn").insertAdjacentElement("afterend", tradeableQuickBtn);
+
+tradeableQuickBtn.addEventListener("click", () => {
+  $("statusFilter").value = "tradeable";
+  renderCards();
+});
+
 $("clearFiltersBtn").addEventListener("click", () => {
   $("searchInput").value = "";
   $("groupFilter").value = "all";
@@ -166,7 +185,6 @@ async function syncOfficialMetadata() {
 
     const byNumber = new Map();
 
-    // カードカタログの情報を登録
     for (const item of CARD_CATALOG) {
       const number = normalize(item.cardNumber);
 
@@ -175,8 +193,6 @@ async function syncOfficialMetadata() {
       }
     }
 
-    // 自動検出データを追加
-    // 空欄の情報でカタログの名前を上書きしない
     try {
       const response = await fetch(
         `./card-metadata.json?v=${Date.now()}`,
@@ -214,7 +230,6 @@ async function syncOfficialMetadata() {
       );
     }
 
-    // 登録済みカードに情報を反映
     for (const card of cards) {
       const official = byNumber.get(normalize(card.cardNumber));
 
@@ -265,6 +280,12 @@ async function syncOfficialMetadata() {
   }
 }
 
+// 所持数から譲れる枚数を計算する
+// 1枚は必ず自分用に残す
+function getTradeableQuantity(card) {
+  return Math.max(0, (Number(card.quantity) || 0) - 1);
+}
+
 function renderCards() {
   if (!currentUser) return;
 
@@ -304,6 +325,9 @@ function renderCards() {
     if (f === "exchange" && !c.exchange) return false;
     if (f === "wanted" && !c.wanted) return false;
     if (f === "noImage" && c.imageData) return false;
+
+    // 譲れるカードは、所持数が2枚以上のカードだけ表示
+    if (f === "tradeable" && getTradeableQuantity(c) <= 0) return false;
 
     return true;
   });
@@ -350,8 +374,18 @@ function renderCards() {
   $("wantedQuickBtn").textContent =
     `☆ 欲しいカード（${cards.filter(c => c.wanted).length}）`;
 
+  const tradeableCardCount = cards.filter(
+    c => getTradeableQuantity(c) > 0
+  ).length;
+
+  tradeableQuickBtn.textContent =
+    `♡ 譲れるカード（${tradeableCardCount}種類）`;
+
   $("cardList").innerHTML = shown.length
-    ? shown.map(c => `
+    ? shown.map(c => {
+      const tradeableQuantity = getTradeableQuantity(c);
+
+      return `
       <article class="card">
         <button class="card-image-button" type="button"
           data-image="${escapeHtml(c.id)}" aria-label="画像を拡大">
@@ -384,6 +418,10 @@ function renderCards() {
             }
             ${c.exchange ? '<span class="tag lav">交換予定</span>' : ""}
             ${c.wanted ? '<span class="tag blue">欲しい</span>' : ""}
+            ${tradeableQuantity > 0
+              ? `<span class="tag lav">譲れる ${tradeableQuantity}枚</span>`
+              : ""
+            }
             ${!c.imageData
               ? '<span class="tag image-missing">画像未登録</span>'
               : ""
@@ -403,7 +441,8 @@ function renderCards() {
             data-edit="${escapeHtml(c.id)}">編集</button>
         </div>
       </article>
-    `).join("")
+    `;
+    }).join("")
     : '<div class="panel empty-state"><p class="hint">条件に合うカードがないよ。絞り込みを変えてみてね。</p></div>';
 
   $("cardList").querySelectorAll("[data-quantity]").forEach(b => {
